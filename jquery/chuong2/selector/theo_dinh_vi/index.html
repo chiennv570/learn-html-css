@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selector theo định vị</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <p>Doan van ban 1</p>
+    <p class="p2">Doan van ban 2</p>
+    <p>Doan van ban 3</p>
+    <p>Doan van ban 4</p>
+    <p>Doan van ban 5</p>
+    <p>Doan van ban 6</p>
+
+    <div class="box">
+        <p>Doan van ban 7</p>
+        <p>Doan van ban 8</p>
+        <p>Doan van ban 9</p>
+    </div>
+
+    <a href="">Link 1</a>
+    <a href="">Link 2</a>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //1. ep chon theo vi tri index
+        $('p:eq(5)').css('color', 'red');
+        $('a:eq(0)').css('color', 'red');
+
+        //2.Chon phan tu p đầu tiên va cuối cùng
+        $('p:first').css('color', 'yellow');
+        $('p:last').css('color', 'purple');
+
+        //3.Chon phan tu p co chỉ số lớn hơn 1
+        $('p:gt(1)').css('color', 'blue');
+
+        //4. Chon phan tu p thu 2 trong box (selector thu 8)
+        $('div p:eq(1)').css('color', 'red');
+
+        //5. Chon phan tu p co chi so nhỏ hơn 3
+        $('p:lt(3)').css('color', 'yellow');
+
+        //6. Chon phan tu p lẻ
+        $('p:odd').css('color', 'red');
+
+        //7. Chon phan tu p lẻ
+        $('p:even').css('color', 'yellow');
+
+        //8. Chon cac phan tu p riêng chỉ loại bỏ vị trí 2
+        $('p').css('color', 'black');
+        $("p:not('p:eq(2)')").css('color', 'red');
+        //8.1. Chon cac phan tu p riêng chỉ loại bỏ vị trí 1
+        $("p:not('p:last')").css('color', 'blue');
+    });
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selector co ban</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1>Menu website</h1><br/>
+<a href="home.html" title="Trang chu">Trang chu</a><br/>
+<a href="about.html" title="Gioi thieu">Gioi thieu</a><br/>
+<a href="product-clothes.html" title="Quan ao">Quan ao</a><br/>
+<a href="product-shoes.html" title="Giay">Giay</a><br/>
+<a href="contact.html" title="Lien he">Lien he</a><br/>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("a[href='home.html']").css('color', 'red');
+    });
+</script>
+</html>

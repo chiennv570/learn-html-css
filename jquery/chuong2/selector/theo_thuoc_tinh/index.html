@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selector theo thuộc tính</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <h1>Menu Websites</h1>
+    <a href="home.html" title="Trang chu">Trang chu</a><br/>
+    <a href="about.html" title="Trang gioi thieu">Gioi thieu</a><br/>
+    <a href="product-clothes.html" title="Quan ao Trang">Quan ao</a><br/>
+    <a href="product-shoes.html" title="Giay">Giay</a><br/>
+    <a title="Lien he">Lien he</a>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //1. To mau do cho trang chu
+        $("a[href='home.html']").css('color', 'red');
+
+        //2. To mau 333 cho tat ca menu khong phai trang chu
+        $("a[href!='home.html']").css('color', '#333');
+
+        //3. Lay tat ca chua "product"
+        $("a[href*='product']").css('color', 'green');
+
+        //4. Lay san pham co ten la "product", theo sau la dau gach nang "-"
+        $("a[href|='product']").css('color', 'gold');
+
+        //5. Tim tat ca menu bat dau bang "product", cho mau "f5f5f5"
+        $("a[href^='product']").css('color', 'blue');
+
+        //6. Lay tat ca cac menu ket thuc bang clothes.html
+        $("a[href$='clothes.html']").css('color', 'yellow');
+
+        //7. Lay tat ca menu co title co 2 tu tro len
+        $("a[title*=' ']").css('color', 'black');
+
+        //8. Lay tat ca menu co tu "Trang" va xung quang co khoảng trắng " "
+        $("a[title~='Trang']").css('color', 'green');
+
+        //9. Lay tat ca menu co href mau do
+        $("a[href]").css('color', 'red');
+
+        //10.Lay menu la product va co 2 tu tro len
+        $("a[href*='product'][title*=' ']").css('color', 'yellow');
+    });
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selector cơ bản</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="box1" class="box">
+        <p>Content 1</p>
+    </div>
+
+    <div id="box2" class="box">
+        <p>Content 2</p>
+    </div>
+
+    <div id="box3" class="box">
+        <p>Content 3</p>
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('p').css('color', 'red');
+        $('.box').css({'width': '200px', 'height': '100px', 'margin': '20px', 'border': '1px solid #333'});
+        $('#box1').css('background-color', 'black');
+        $('#box2, #box3, p').css('background', 'gold');
+    });
+</script>
+</html>

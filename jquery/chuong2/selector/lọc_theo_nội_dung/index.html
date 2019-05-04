@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selector lọc theo phần tử </title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>phan tu 1</li>
+        <li></li>
+        <li>phan tu 3</li>
+        <li>phan tu 4</li>
+    </ul>
+
+    <ul class="element">
+        <li>phan tu 1</li>
+        <li>
+            <ul class="element1">
+                <li class="border_red">phan tu 1.1</li>
+                <li>phan tu 1.2</li>
+            </ul>
+        </li>
+        <li>phan tu 3</li>
+        <li>
+            <ul>
+                <li>phan tu 3.1</li>
+                <li>phan tu 3.2</li>
+            </ul>
+        </li>
+        <li>phan tu 4</li>
+    </ul>
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //1. Tìm phan tu không có nội dung
+        //$('ul li:empty').text('Khong co noi dung').css('color', 'red');
+
+        //2. Tim phan tu trong nội dung có từ "phan"
+        $("ul li:contains('phan')").css('color', 'yellow');
+
+        //3.Tìm phần tử con có nội dung ngược với empty
+        $("ul li:parent").css('color', 'red');
+        $("ul li").css('color', 'black');
+
+        //4. Tim phan tu có ít nhất phần tử con là selector cho trước
+        $("ul:has('.border_red')").css('border', '1px solid red'); // tra ve ul.element va ul.element1
+    });
+</script>
+</html>

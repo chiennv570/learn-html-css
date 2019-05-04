@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selector lọc theo phần tử </title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <ul class="list-post">
+        <li>Bai viet 1</li>
+        <li>Bai viet 2</li>
+        <li>Bai viet 3</li>
+        <li>Bai viet 4</li>
+        <li>Bai viet 5</li>
+        <li>Bai viet 6</li>
+        <li>Bai viet 7</li>
+        <li>Bai viet 8</li>
+        <li>Bai viet 9</li>
+    </ul>
+    <ul class="list-post">
+        <li>Bai viet 10</li>
+    </ul>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //1. Bai viết đầu tiên cho màu đỏ và cuối cùng màu
+        $('ul.list-post li:first-child').css('color', 'red');
+        $('ul.list-post li:last-child').css('color', 'yellow');
+
+        //2 nth-child(index, odd, even, operation) nth-child tính từ phần tử 1 chứ không phải 0
+        $('ul.list-post li').css('color', 'black');
+        //2.1 chon phần tử con ở vị trí thứ 2
+        $('ul.list-post :nth-child(2)').css('color', 'red');
+        //2.2 chon phần tử con ở vị trí lẻ
+        $('ul.list-post :nth-child(odd)').css('color', 'yellow');
+        //2.3 chon phần tử con ở vị trí chẵn
+        $('ul.list-post :nth-child(even)').css('color', 'red');
+        //2.4 chon phần tử con ở vị trí chia hết cho 3
+        $('ul.list-post li').css('color', 'black');
+        $('ul.list-post :nth-child(3n)').css('color', 'green');
+
+        //3.chon phần tử la con duy nhất của phần tử cha (Bai viet 10)
+        $('ul.list-post li').css('color', 'black');
+        $('ul.list-post li:only-child').css('color', 'red');
+    });
+</script>
+</html>

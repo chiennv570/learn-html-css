@@ -1,0 +1,15 @@
+a {
+	color: red;
+}
+
+ul li a {
+	color: orange
+}
+
+ul#main_menu a {
+	color: blue;
+}
+
+ul.list_item a {
+	color: green!important;
+}
