@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selector ve form</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+
+<style>
+    form * {
+        display: block;
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <form>
+        <input type="text" name="">
+        <input type="password" name="" disabled="disabled">
+        <input type="checkbox" name="hobby" value="game" checked="checked">
+        <input type="checkbox" name="hobby" value="shopping">
+        <input type="checkbox" name="hobby" value="read_book">
+        <input type="radio" name="">
+        <textarea>
+
+        </textarea>
+        <button>Nut bam</button>
+        <input type="submit" name="">
+        <input type="file" name="">
+        <select>
+            <option>Lua chon</option>
+            <option>Php</option>
+            <option>Jquery</option>
+            <option selected="selected">Jquery</option>
+        </select>
+    </select>
+
+    </form>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // 1. Đếm số input trong form
+        var num_input = $('form :input').length;
+        console.log(num_input);
+
+        // 2. Input text => background red
+        $('form :text').css('border', '1px solid #f00');
+
+        //3. Đếm phần tử select đã được chọn
+        var input_selected = $('form :selected');
+        input_selected.each(function () {
+          console.log($(this).text());
+        });
+
+        var input_checkbox_checked = $('form :checkbox:checked');
+        input_checkbox_checked.each(function () {
+           console.log($(this).val());
+        });
+
+        $('form :disabled').css('border', '1px solid green');
+    });
+</script>
+</html>
